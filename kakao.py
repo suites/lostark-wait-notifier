@@ -4,10 +4,8 @@
 # kakao.py
 # ---------------------------------
 
-import os
 from flask import Flask, request, jsonify
 from Crawler import *
-import json
 
 app = Flask(__name__)
 
