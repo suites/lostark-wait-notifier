@@ -1,8 +1,7 @@
+<h1 align="center">🐤️ Lost Ark wait notifier</h1>
 <div align="middle">
     <img src="https://raw.githubusercontent.com/suitelab/lostark-wait-notifier/master/images/로스트아크 접속.jpg" width="300px">
 </div>
-
-<h1 align="center">🐤️ Lost Ark wait notifier</h1>
 
 <p align="center">
 	<a href="https://github.com/suitelab/lostark-wait-notifier"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=102">
