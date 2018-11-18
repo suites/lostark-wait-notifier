@@ -26,9 +26,9 @@ def Message():
     dataReceive = request.get_json()
     content = dataReceive['content']
     if content == u"대기열":
-        cr = Crawler()
-        json_file = cr.start("http://loaq.kr/")
-        # json_file["server_time"]
+        # cr = Crawler()
+        # json_file = cr.start("http://loaq.kr/")
+        json_file = json.load('test.json')
 
         dataSend = {
             "message": {

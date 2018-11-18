@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../loa-wait-notifier/.idea/loa-wait-notifier.iml" filepath="$PROJECT_DIR$/../loa-wait-notifier/.idea/loa-wait-notifier.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/lostark-wait-notifier.iml" filepath="$PROJECT_DIR$/.idea/lostark-wait-notifier.iml" />
     </modules>
   </component>
 </project>

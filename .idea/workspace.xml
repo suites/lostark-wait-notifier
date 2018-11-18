@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d9bb2097-ba1e-4110-b942-f59a959bf57e" name="Default" comment="" />
+    <list default="true" id="d9bb2097-ba1e-4110-b942-f59a959bf57e" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kakao.py" beforeDir="false" afterPath="$PROJECT_DIR$/kakao.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,10 +18,22 @@
       <file leaf-file-name="Crawler.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Crawler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="1003">
+              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
               <folding>
-                <element signature="e#747#776#0" expanded="true" />
+                <element signature="e#747#777#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="api.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+              <folding>
+                <element signature="e#25#48#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -26,10 +42,22 @@
       <file leaf-file-name="kakao.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/kakao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="391">
               <caret line="32" column="20" lean-forward="true" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
               <folding>
                 <element signature="e#113#122#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <folding>
+                <element signature="e#25#34#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -44,6 +72,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -52,11 +83,12 @@
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/api.py" />
         <option value="$PROJECT_DIR$/Crawler.py" />
+        <option value="$PROJECT_DIR$/test.json" />
         <option value="$PROJECT_DIR$/kakao.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="121" />
     <option name="y" value="77" />
     <option name="width" value="1572" />
@@ -67,18 +99,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="loa-wait-notifier" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loa-wait-notifier" type="462c0819:PsiDirectoryNode" />
+              <item name="lostark-wait-notifier" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -102,7 +134,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.kakao">
+  <component name="RunManager" selected="Python.api">
     <configuration name="Crawler" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="loa-wait-notifier" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -202,8 +234,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.kakao" />
         <item itemvalue="Python.api" />
+        <item itemvalue="Python.kakao" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.Crawler" />
         <item itemvalue="Python.crawler" />
@@ -221,22 +253,37 @@
       <option name="presentableId" value="Default" />
       <updated>1542463653407</updated>
     </task>
+    <task id="LOCAL-00001" summary=".">
+      <created>1542523371466</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1542523371466</updated>
+    </task>
+    <task id="LOCAL-00002" summary=".">
+      <created>1542523848411</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1542523848411</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="121" y="77" width="1572" height="916" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18251929" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18251929" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3220974" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3220974" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.37992376" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -248,6 +295,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -281,10 +332,30 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Crawler.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="e#747#777#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kakao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="32" column="20" lean-forward="true" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+          <folding>
+            <element signature="e#113#122#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Crawler.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1445">
           <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
           <folding>
-            <element signature="e#747#776#0" expanded="true" />
+            <element signature="e#747#777#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -304,7 +375,7 @@
         <state relative-caret-position="306">
           <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
           <folding>
-            <element signature="e#747#776#0" expanded="true" />
+            <element signature="e#747#777#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -323,6 +394,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -335,18 +413,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Crawler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="1003">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
           <folding>
-            <element signature="e#747#776#0" expanded="true" />
+            <element signature="e#747#777#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="357">
+          <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
           <folding>
             <element signature="e#25#48#0" expanded="true" />
           </folding>
@@ -355,7 +433,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/kakao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="391">
           <caret line="32" column="20" lean-forward="true" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
           <folding>
             <element signature="e#113#122#0" expanded="true" />
