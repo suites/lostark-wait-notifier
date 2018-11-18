@@ -13,12 +13,9 @@
                 [suitee.me]
 ═══════════════════════════════════════════════════════════════
 """
-from bs4 import BeautifulSoup
-import urllib.request as req
 from selenium import webdriver
 import json
 import os.path
-from datetime import datetime
 
 
 class Crawler:
