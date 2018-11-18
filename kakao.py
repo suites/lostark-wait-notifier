@@ -30,7 +30,8 @@ def Message():
         json_file = cr.start()
         # json_file = json.load(open('test.json', "r", encoding="utf-8"))
 
-        text = f"서버시간 - {json_file['server_time']}\n"
+        # text = f"서버시간 - {json_file['server_time']}\n"
+        text = f"서버시간"
 
         for item in json_file['items']:
             text += f"{item['server']} : {item['wait']}\n"
