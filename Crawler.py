@@ -35,7 +35,3 @@ class Crawler:
         json_file = json.dumps(servers, indent=2, ensure_ascii=False)
 
         return json_file
-
-
-cr = Crawler()
-cr.start()
