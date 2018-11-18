@@ -12,9 +12,11 @@ class Crawler:
         servers = {}
         items = []
 
-        servers['server_time'] = soup.select('div.time')[0].text.replace('\n', '')
+        servers['server_time'] = soup.select('div.time')[0].text.replace("  ","").replace('\n', '')
+        print(servers['server_time'])
 
         server_name = ''
+
         for tag in soup.select('div.server-list'):
             server_name += tag.text
 
@@ -33,3 +35,7 @@ class Crawler:
         json_file = json.dumps(servers, indent=2, ensure_ascii=False)
 
         return json_file
+
+
+cr = Crawler()
+cr.start()
