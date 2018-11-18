@@ -1,0 +1,1 @@
+# lostark-wait-notifier
