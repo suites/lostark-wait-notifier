@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # ---------------------------------
-# pangpang2.py
+# kakao.py
 # ---------------------------------
 
 import os
@@ -16,7 +16,7 @@ app = Flask(__name__)
 def Keyboard():
     dataSend = {
         "type": "buttons",
-        "buttons": ["대기열", "도움말"]
+        "buttons": ["대기열", "명령어"]
     }
     return jsonify(dataSend)
 
@@ -29,7 +29,7 @@ def Message():
         cr = Crawler()
         json_file = cr.start()
 
-        text = f"서버시간 - {json_file['server_time']}\n"
+        text = f"서버시간 - {json_file['server_time']}\n\n"
 
         for item in json_file['items']:
             text += f"{item['server']} - {item['wait']}\n"
@@ -57,5 +57,4 @@ def Message():
 
 
 if __name__ == "__main__":
-    # app.run(debug=True)
     app.run(host="0.0.0.0", port=8080)
