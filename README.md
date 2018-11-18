@@ -1,5 +1,5 @@
 <div align="middle">
-    <img src="https://raw.githubusercontent.com/suitelab/lostark-wait-notifier/master/images/로스트아크 접속.jpg" height="200px">
+    <img src="https://raw.githubusercontent.com/suitelab/lostark-wait-notifier/master/images/로스트아크 접속.jpg" width="300px">
 </div>
 
 <h1 align="center">🐤️ Lost Ark wait notifier</h1>
@@ -15,4 +15,8 @@
 
 ## Getting Started
 http://pf.kakao.com/_dcPGj
+
+<div align="middle">
+    <img src="https://raw.githubusercontent.com/suitelab/lostark-wait-notifier/master/images/chat.png" width="300px">
+</div>
 
