@@ -17,6 +17,6 @@
 http://pf.kakao.com/_dcPGj
 
 <div align="middle">
-    <img src="https://raw.githubusercontent.com/suitelab/lostark-wait-notifier/master/images/chat.png" width="300px">
+    <img src="https://raw.githubusercontent.com/suitelab/lostark-wait-notifier/master/images/chat_image.png" width="300px">
 </div>
 
