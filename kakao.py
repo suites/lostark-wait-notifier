@@ -6,7 +6,7 @@
 
 import os
 from flask import Flask, request, jsonify
-from Crawler import *
+from Crawler_lagacy import *
 import json
 
 app = Flask(__name__)
@@ -26,9 +26,9 @@ def Message():
     dataReceive = request.get_json()
     content = dataReceive['content']
     if content == u"대기열":
-        # cr = Crawler()
-        # json_file = cr.start("http://loaq.kr/")
-        json_file = json.load(open('test.json', "r", encoding="utf-8"))
+        cr = Crawler()
+        json_file = cr.start()
+        # json_file = json.load(open('test.json', "r", encoding="utf-8"))
 
         text = f"서버시간: {json_file['server_time']}\n"
 
