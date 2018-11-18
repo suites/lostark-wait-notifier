@@ -51,6 +51,8 @@ def Message():
                 "text": "명령어를 다시 입력해주세요. 1. 대기열, 2.명령어"
             }
         }
+
+    dataSend["keyboard"] = {"type": "buttons", "buttons": ["대기열", "명령어"]}
     return jsonify(dataSend)
 
 
