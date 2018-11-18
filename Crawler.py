@@ -12,7 +12,7 @@ class Crawler:
         servers = {}
         items = []
 
-        servers['server_time'] = soup.select('div.time')[0].text.replace(' ', '').replace('\n', '')
+        servers['server_time'] = soup.select('div.time')[0].text.replace('\n', '')
 
         server_name = ''
         for tag in soup.select('div.server-list'):
