@@ -1,5 +1,3 @@
-# lostark-wait-notifier
-
 <div align="middle">
     <img src="https://raw.githubusercontent.com/suitelab/lostark-wait-notifier/master/images/로스트아크 접속.jpg" height="200px">
 </div>
