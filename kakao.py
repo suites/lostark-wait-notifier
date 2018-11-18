@@ -30,9 +30,16 @@ def Message():
         # json_file = cr.start("http://loaq.kr/")
         json_file = json.load(open('test.json', "r", encoding="utf-8"))
 
+        text = f"서버시간: {json_file['server_time']}\n"
+
+        for item in json_file['items']:
+            text += f"{item['server']} : {item['wait']}\n"
+
+        print(text)
+
         dataSend = {
             "message": {
-                "text": json_file["server_time"] + "\n루페온 : 1000\n크로나 : 2000"
+                "text": text
             }
         }
     elif content == u"명령어":
