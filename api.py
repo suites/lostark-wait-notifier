@@ -2,7 +2,7 @@
 
 from flask import Flask
 from flask_restful import Resource, Api
-from Crawler_lagacy import *
+from Crawler import *
 
 app = Flask(__name__)
 api = Api(app)

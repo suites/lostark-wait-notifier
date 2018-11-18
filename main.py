@@ -2,7 +2,7 @@
 
 import re
 import sys
-from Crawler_lagacy import *
+from Crawler import *
 
 if __name__ == "__main__":
     cr = Crawler()

@@ -6,7 +6,7 @@
 
 import os
 from flask import Flask, request, jsonify
-from Crawler_lagacy import *
+from Crawler import *
 import json
 
 app = Flask(__name__)
