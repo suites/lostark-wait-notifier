@@ -28,7 +28,7 @@ def Message():
     if content == u"대기열":
         # cr = Crawler()
         # json_file = cr.start("http://loaq.kr/")
-        json_file = json.load('test.json')
+        json_file = json.load(open('test.json', "r", encoding="utf-8"))
 
         dataSend = {
             "message": {
