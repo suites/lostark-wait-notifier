@@ -33,6 +33,7 @@ def Message():
         # text = f"서버시간 - {json_file['server_time']}\n"
         text = f"서버시간"
 
+        print(json_file['items'])
         for item in json_file['items']:
             text += f"{item['server']} - {item['wait']}\n"
 
