@@ -51,7 +51,7 @@ def Message():
     #     }
     dataSend = {
         "message": {
-            "text": "시스템 점검중입니다."
+            "text": "LoaQ.kr측의 데이터 재배포 금지 요청으로 서비스를 일시 중단합니다."
         }
     }
     dataSend["keyboard"] = {"type": "buttons", "buttons": ["대기열", "명령어"]}
