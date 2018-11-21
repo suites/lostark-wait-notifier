@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 ═══════════════════════════════════════════════════════════════
 ███████╗██╗   ██╗██╗████████╗███████╗   ██╗      █████╗ ██████╗
@@ -13,7 +14,7 @@
 ═══════════════════════════════════════════════════════════════
 """
 
-import json
+import platform
 from datetime import datetime
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -23,10 +24,14 @@ class Crawler:
     def __init__(self):
         options = webdriver.ChromeOptions()
         options.add_argument('headless')
-    #     # options.add_argument('window-size=1920x1080')
-    #     # options.add_argument("disable-gpu")
-    #     self.driver = webdriver.Chrome(executable_path=r"chromedriver_win32/chromedriver.exe", chrome_options=options)
-        self.driver = webdriver.Chrome(executable_path=r"/usr/lib/chromium-browser/chromedriver", chrome_options=options)
+
+        chrome_path = ''
+        if platform.system() == "Linux":
+            chrome_path = r"/usr/lib/chromium-browser/chromedriver"
+        else:
+            chrome_path = r"chromedriver_win32/chromedriver.exe"
+
+        self.driver = webdriver.Chrome(executable_path=chrome_path, chrome_options=options)
 
     def start(self):
         url = 'https://rubystarashe.github.io/lostark/'
@@ -48,6 +53,10 @@ class Crawler:
         for i in range(server_count):
             server = soup.select('span.data.name')[i].text
             queue = soup.select('span.data.queue')[i].text
+            if queue == '알 수 없음':
+                queue = -1
+            elif queue == '접속 가능':
+                queue = 0
             items.append({"server": server, "queue": queue})
 
         servers["items"] = items
