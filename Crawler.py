@@ -26,7 +26,7 @@ class Crawler:
     #     # options.add_argument('window-size=1920x1080')
     #     # options.add_argument("disable-gpu")
     #     self.driver = webdriver.Chrome(executable_path=r"chromedriver_win32/chromedriver.exe", chrome_options=options)
-        self.driver = webdriver.Chrome(executable_path=r"/usr/local/bin/chromedriver", chrome_options=options)
+        self.driver = webdriver.Chrome(executable_path=r"/usr/lib/chromium-browser/chromedriver", chrome_options=options)
 
     def start(self):
         url = 'https://rubystarashe.github.io/lostark/'
