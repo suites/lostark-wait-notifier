@@ -7,16 +7,15 @@ from Crawler import *
 app = Flask(__name__)
 api = Api(app)
 
-class HelloWorld(Resource):
+class TestCrawler(Resource):
     def get(self):
         cr = Crawler()
 
-        url = "http://loaq.kr/"
-        json_file = cr.start(url)
+        json_file = cr.start()
 
         return json_file
 
-api.add_resource(HelloWorld, '/')
+api.add_resource(TestCrawler, '/')
 
 if __name__ == '__main__':
     app.run(debug=True)

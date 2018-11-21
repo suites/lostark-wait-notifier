@@ -30,7 +30,7 @@ def Message():
         text = f"서버시간 - {json_file['server_time']}\n\n"
 
         for item in json_file['items']:
-            text += f"{item['server']} - {item['wait']}\n"
+            text += f"{item['server']} - {item['queue']}\n"
 
         dataSend = {
             "message": {
