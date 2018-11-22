@@ -24,6 +24,8 @@ class Crawler:
     def __init__(self):
         options = webdriver.ChromeOptions()
         options.add_argument('headless')
+        options.add_argument('disable-gpu')
+        options.add_argument('no-sandbox')
 
         chrome_path = ''
         if platform.system() == "Linux":
