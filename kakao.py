@@ -48,7 +48,7 @@ def Message():
                 queue = '지원예정'
 
             text += f"{item[0]} : {queue}\n"
-        text += f"데이터 제공 :\nrubystarashe.github.io/lostark/"
+        text += f"\n데이터 제공 :\nrubystarashe.github.io/lostark/"
         db.close()
 
         data_send = {
@@ -69,7 +69,7 @@ def Message():
             }
         }
 
-    data_send["message_button"] = {"label": "개발자 블로그", "url": "http://suitee.me"}
+    data_send["message"].update({'message_button': {'label': '개발자 윤옴므 블로그', 'url': 'http://suitee.me'}})
     data_send["keyboard"] = {"type": "buttons", "buttons": ["대기열", "도움말"]}
     return jsonify(data_send)
 
