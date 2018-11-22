@@ -11,13 +11,15 @@ class DbTools:
                                     password="2913",
                                     charset='utf8')
         self.conn.cursor().execute("USE db;")
+        self.crawler = None
 
         if not select_only:
             self.crawler = Crawler()
 
     def close(self):
         self.conn.close()
-        self.crawler.end()
+        if self.crawler is not None:
+            self.crawler.end()
 
     def get_data(self):
         cursor = self.conn.cursor()
