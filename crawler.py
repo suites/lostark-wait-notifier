@@ -29,8 +29,8 @@ class Crawler:
 
         chrome_path = ''
         if platform.system() == "Linux":
-            # chrome_path = r"/usr/lib/chromium-browser/chromedriver"
-            chrome_path = r"chromedriver_linux64/chromedriver"
+            chrome_path = r"/usr/lib/chromium-browser/chromedriver"
+            # chrome_path = r"chromedriver_linux64/chromedriver"
         else:
             chrome_path = r"chromedriver_win32/chromedriver.exe"
 
