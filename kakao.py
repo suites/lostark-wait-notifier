@@ -16,7 +16,7 @@
 
 from flask import Flask, request, jsonify
 from dbtools import *
-import datetime
+from datetime import datetime
 from crawler import *
 
 app = Flask(__name__)
@@ -37,7 +37,7 @@ def Message():
     content = dataReceive['content']
     if content == u"대기열":
         data = db.get_data()
-        now = datetime.datetime.now()
+        now = datetime.now()
         text = "🐤️로스트아크 대기열 알림봇\n"
         text += "═══════════\n"
         text += f"{now.hour}시 {now.minute}분 {now.second}초 기준\n\n"

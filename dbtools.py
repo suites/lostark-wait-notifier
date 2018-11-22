@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import pymysql.cursors
 from crawler import *
-import datetime
+from datetime import datetime
 
 
 class DbTools:
@@ -47,32 +47,10 @@ class DbTools:
             cursor.execute(sql_query)
 
         self.conn.commit()
-        print('{0}개의 정보 업데이트 완료: {1}'.format(len(queues),  str(datetime.datetime.now())))
+        print('{0}개의 정보 업데이트 완료: {1}'.format(len(queues),  str(datetime.now())))
 
 
     def save_data(self):
         json_file = self.crawler.start()
 
         self.insert_queue_query(json_file['items'])
-
-# try:
-#     cursor = conn.cursor()
-#
-#     cursor.execute("USE db;")
-#
-#     cr = Crawler()
-#     for i in range(5):
-#         json_file = cr.start()
-#
-#         insert_queue_query(json_file['items'], cursor)
-#
-#         conn.commit()
-#         print('정보 업데이트 완료: ' + str(datetime.datetime.now()))
-#         sleep(3)
-#
-# except Exception as e:
-#     print("Exeception occured:{}".format(e))
-#
-# finally:
-#     conn.close()
-#     cr.end()
