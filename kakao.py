@@ -20,22 +20,22 @@ from datetime import datetime
 from crawler import *
 
 app = Flask(__name__)
-db = DbTools(select_only=True)
 
 @app.route('/keyboard')
 def Keyboard():
-    dataSend = {
+    data_send = {
         "type": "buttons",
         "buttons": ["대기열", "도움말"]
     }
-    return jsonify(dataSend)
+    return jsonify(data_send)
 
 
 @app.route('/message', methods=['POST'])
 def Message():
-    dataReceive = request.get_json()
-    content = dataReceive['content']
+    data_receive = request.get_json()
+    content = data_receive['content']
     if content == u"대기열":
+        db = DbTools(select_only=True)
         data = db.get_data()
         now = datetime.now()
         text = "🐤️로스트아크 대기열 알림봇\n"
@@ -48,27 +48,28 @@ def Message():
                 queue = '지원예정'
 
             text += f"{item[0]} : {queue}\n"
+        db.close()
 
-        dataSend = {
+        data_send = {
             "message": {
                 "text": text
             }
         }
     elif content == u"도움말":
-        dataSend = {
+        data_send = {
             "message": {
                 "text": "1. 대기열\n\n 개발자 블로그 : http://suitee.me"
             }
         }
     else:
-        dataSend = {
+        data_send = {
             "message": {
                 "text": "명령어를 다시 입력해주세요. 1. 대기열, 2.도움말"
             }
         }
 
-    dataSend["keyboard"] = {"type": "buttons", "buttons": ["대기열", "도움말"]}
-    return jsonify(dataSend)
+    data_send["keyboard"] = {"type": "buttons", "buttons": ["대기열", "도움말"]}
+    return jsonify(data_send)
 
 
 if __name__ == "__main__":
