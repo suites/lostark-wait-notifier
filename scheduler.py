@@ -16,7 +16,7 @@ if __name__ == "__main__":
     print("scheduler is running! {}".format(datetime.now()))
 
     schedule.every(2).seconds.do(insert_schedule)
-    schedule.every(10).seconds.do(delete_schedule)
+    schedule.every(4000).seconds.do(delete_schedule)
     while True:
         schedule.run_pending()
         time.sleep(1)
