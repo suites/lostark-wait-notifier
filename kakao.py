@@ -48,7 +48,7 @@ def Message():
                 queue = '지원예정'
 
             text += f"{item[0]} : {queue}\n"
-            text += f"데이터 제공 :\nrubystarashe.github.io/lostark/"
+        text += f"데이터 제공 :\nrubystarashe.github.io/lostark/"
         db.close()
 
         data_send = {
