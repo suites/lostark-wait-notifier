@@ -41,6 +41,19 @@ class DbTools:
         rows = cursor.fetchall()
         return rows
 
+    def delete_data(self):
+        cursor = self.conn.cursor()
+        cursor.execute("USE db;")
+
+        sql = """
+        DELETE FROM queue
+        ORDER BY date_time ASC LIMIT 9000;
+        """
+        cursor.execute(sql)
+
+        self.conn.commit()
+        print('9000개의 정보 삭제 완료: {0}'.format(str(datetime.now())))
+
     def insert_queue_query(self, queues):
         cursor = self.conn.cursor()
 
