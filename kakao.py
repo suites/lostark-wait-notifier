@@ -48,7 +48,7 @@ def Message():
                 queue = '지원예정'
 
             text += f"{item[0]} : {queue}\n"
-        text += f"\n데이터 제공 :\nrubystarashe.github.io/lostark/"
+        text += f"\n데이터 제공 :\nrubystarashe.github.io/lostark\n"
         db.close()
 
         data_send = {
@@ -65,7 +65,7 @@ def Message():
     else:
         data_send = {
             "message": {
-                "text": "명령어를 다시 입력해주세요. 1. 대기열, 2.도움말"
+                "text": "명령어를 다시 입력해주세요.\n1. 대기열\n\n2. 도움말"
             }
         }
 
