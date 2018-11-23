@@ -19,6 +19,7 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from time import sleep
+import config
 
 class Crawler:
     def __init__(self):
@@ -28,17 +29,16 @@ class Crawler:
         options.add_argument('no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
 
-        chrome_path = ''
         if platform.system() == "Linux":
             # chrome_path = r"/usr/lib/chromium-browser/chromedriver"
-            chrome_path = r"chromedriver_linux64/chromedriver"
+            chrome_path = config.CHROME_PATH['Linux']
         else:
-            chrome_path = r"chromedriver_win32/chromedriver.exe"
+            chrome_path = config.CHROME_PATH['Windows']
 
         self.driver = webdriver.Chrome(executable_path=chrome_path, chrome_options=options)
 
     def start(self):
-        url = 'https://rubystarashe.github.io/lostark/'
+        url = config.TARGET_URL
 
         self.driver.get(url)
         sleep(1)

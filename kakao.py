@@ -15,9 +15,9 @@
 """
 
 from flask import Flask, request, jsonify
-from dbtools import *
+from modules.dbtools import *
+from modules.crawler import *
 from datetime import datetime
-from crawler import *
 
 app = Flask(__name__)
 
@@ -33,6 +33,7 @@ def Keyboard():
 @app.route('/message', methods=['POST'])
 def Message():
     data_receive = request.get_json()
+    print(data_receive)
     content = data_receive['content']
     if content == u"대기열":
         db = DbTools(select_only=True)
@@ -75,4 +76,4 @@ def Message():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080)
+    app.run(host=config.SERVER_CONFIG['host'], port=config.SERVER_CONFIG['port'])

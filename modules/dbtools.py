@@ -1,16 +1,18 @@
 # -*- coding: utf-8 -*-
 import pymysql.cursors
-from crawler import *
+from modules.crawler import *
 from datetime import datetime
+import config
 
 
 class DbTools:
     def __init__(self, select_only = False):
-        self.conn = pymysql.connect(host='localhost',
-                                    user='root',
-                                    password="2913",
-                                    charset='utf8')
-        self.conn.cursor().execute("USE db;")
+        self.conn = pymysql.connect(host=config.DATABASE_CONFIG["host"],
+                                    user=config.DATABASE_CONFIG["user"],
+                                    db=config.DATABASE_CONFIG["db"],
+                                    password=config.DATABASE_CONFIG["password"],
+                                    charset=config.DATABASE_CONFIG["charset"])
+        self.cursor = self.conn.cursor()
         self.crawler = None
 
         if not select_only:
@@ -22,9 +24,6 @@ class DbTools:
             self.crawler.end()
 
     def get_data(self):
-        cursor = self.conn.cursor()
-        cursor.execute("USE db;")
-
         sql = """
         SELECT      sv.server_name
         ,           que.queue
@@ -36,34 +35,27 @@ class DbTools:
                                      ORDER BY date_time DESC
                                      LIMIT 1);
         """
-        cursor.execute(sql)
+        self.cursor.execute(sql)
 
-        rows = cursor.fetchall()
-        return rows
+        return self.cursor.fetchall()
 
     def delete_data(self):
-        cursor = self.conn.cursor()
-        cursor.execute("USE db;")
-
         sql = """
         DELETE FROM queue
         ORDER BY date_time ASC LIMIT 9000;
         """
-        cursor.execute(sql)
+        self.cursor.execute(sql)
 
         self.conn.commit()
         print('9000개의 정보 삭제 완료: {0}'.format(str(datetime.now())))
 
     def insert_queue_query(self, queues):
-        cursor = self.conn.cursor()
-
         for i, queue in enumerate(queues):
             sql_query = f"INSERT INTO queue(date_time, server_id, queue) VALUES (now(), {i + 1}, {queue['queue']});"
-            cursor.execute(sql_query)
+            self.cursor.execute(sql_query)
 
         self.conn.commit()
         print('{0}개의 정보 업데이트 완료: {1}'.format(len(queues),  str(datetime.now())))
-
 
     def save_data(self):
         json_file = self.crawler.start()

@@ -13,7 +13,7 @@
 로스트아크 대기열 현황 카카오톡 알림입니다.
 
 ## Getting Started
-
+<https://pf.kakao.com/_dcPGj>
 
 <div align="middle">
     <img src="https://raw.githubusercontent.com/suitelab/lostark-wait-notifier/master/images/chat_image.png" width="300px">
