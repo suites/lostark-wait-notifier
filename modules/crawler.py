@@ -14,15 +14,20 @@
 ═══════════════════════════════════════════════════════════════
 """
 
-import platform
 from datetime import datetime
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from time import sleep
+
+import requests
+import platform
 import config
 
 class Crawler:
-    def __init__(self):
+    def __init__(self, use_driver=True):
+        if not use_driver:
+            return
+
         options = webdriver.ChromeOptions()
         options.add_argument('headless')
         options.add_argument('disable-gpu')
@@ -37,8 +42,37 @@ class Crawler:
 
         self.driver = webdriver.Chrome(executable_path=chrome_path, chrome_options=options)
 
-    def start(self):
-        url = config.TARGET_URL
+
+    def start_notice(self):
+        response = requests.get(config.URL_CONFIG['notice'])
+        html = response.text
+
+        soup = BeautifulSoup(html, 'html.parser')
+
+        links = soup.select('#list > div.list.list--default > ul:nth-of-type(2) > li > a')
+        titles = soup.select('#list > div.list.list--default > ul:nth-of-type(2) > li > a > div.list__subject > span.list__title')
+
+        notices = []
+        for i in range(len(titles)):
+            if '완료' in titles[i].text:
+                continue
+
+            url = "http://lostark.game.onstove.com" + links[i]['href']
+
+            response = requests.get(url)
+            html = response.text
+
+            inner_soup = BeautifulSoup(html, 'html.parser')
+            inner_title = inner_soup.find(text='[점검 시간]')
+            inner_content = inner_title.parent.parent.findNext('p').contents[0].text
+
+            notices.append([titles[i].text, inner_title + '\n' + inner_content, url])
+
+        return notices
+
+
+    def start_queue(self):
+        url = config.URL_CONFIG['target']
 
         self.driver.get(url)
         sleep(1)

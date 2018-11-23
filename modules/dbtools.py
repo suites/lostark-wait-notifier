@@ -6,7 +6,7 @@ import config
 
 
 class DbTools:
-    def __init__(self, select_only = False):
+    def __init__(self, select_only=False):
         self.conn = pymysql.connect(host=config.DATABASE_CONFIG["host"],
                                     user=config.DATABASE_CONFIG["user"],
                                     db=config.DATABASE_CONFIG["db"],
@@ -58,6 +58,6 @@ class DbTools:
         print('{0}개의 정보 업데이트 완료: {1}'.format(len(queues),  str(datetime.now())))
 
     def save_data(self):
-        json_file = self.crawler.start()
+        json_file = self.crawler.start_queue()
 
         self.insert_queue_query(json_file['items'])
