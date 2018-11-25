@@ -1,3 +1,8 @@
+USE db;
+DELETE FROM server;
+
+INSERT INTO server(server_name) VALUES ('에버그레이스');
+INSERT INTO server(server_name) VALUES ('베아트리스');
 INSERT INTO server(server_name) VALUES ('안타레스');
 INSERT INTO server(server_name) VALUES ('아크투르스');
 INSERT INTO server(server_name) VALUES ('알데바란');
