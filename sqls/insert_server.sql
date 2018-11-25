@@ -12,3 +12,4 @@ INSERT INTO server(server_name) VALUES ('기에나');
 INSERT INTO server(server_name) VALUES ('시리우스');
 INSERT INTO server(server_name) VALUES ('크라테르');
 INSERT INTO server(server_name) VALUES ('프로키온');
+
