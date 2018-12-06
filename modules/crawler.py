@@ -64,10 +64,15 @@ class Crawler:
 
             inner_soup = BeautifulSoup(html, 'html.parser')
             inner_title = inner_soup.find(text='[점검 시간]')
+            if inner_title is None:
+                continue
+
             inner_content = inner_title.parent.parent.findNext('p').contents[0].text
 
             notices.append([titles[i].text, inner_title + '\n' + inner_content, url])
 
+        if len(notices) == 0:
+            notices.append('예정된 점검 공지가 없습니다 😍')
         return notices
 
 

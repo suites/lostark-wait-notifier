@@ -1,14 +1,11 @@
 from modules.crawler import *
 
-cr = Crawler(use_driver = False)
-
-notices = cr.start_notice()
-notices += cr.start_notice()
-
-text = ''
+crawler = Crawler(use_driver=False)
+notices = crawler.start_notice()
+text = "🐤️로스트아크 점검 공지\n"
+text += "═══════════\n"
 for notice in notices:
-    text += '\n'.join(notice)
-    text += '\n\n=============================\n'
-
+    text += notice + '\n\n'
+    text += '\n\n-----------------------\n'
 
 print(text)

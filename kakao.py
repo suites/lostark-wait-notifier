@@ -41,8 +41,14 @@ def get_wait_text():
     text += "═══════════\n"
     text += f"{now.hour}시 {now.minute}분 {now.second}초 기준\n\n"
 
+    # for item in data:
+    #     queue = item[1]
+    #     if item[1] == -1:
+    #         queue = '지원예정'
+
+    #서버가 꺼져있을 시
     for item in data:
-        queue = item[1]
+        queue = 0
         if item[1] == -1:
             queue = '지원예정'
 
@@ -58,7 +64,7 @@ def get_notice_text():
     text = "🐤️로스트아크 점검 공지\n"
     text += "═══════════\n"
     for notice in notices:
-        text += '\n\n'.join(notice)
+        text += notice + '\n\n'
         text += '\n\n-----------------------\n'
 
     return text
