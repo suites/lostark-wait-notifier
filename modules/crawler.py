@@ -44,36 +44,39 @@ class Crawler:
 
 
     def start_notice(self):
-        response = requests.get(config.URL_CONFIG['notice'])
-        html = response.text
-
-        soup = BeautifulSoup(html, 'html.parser')
-
-        links = soup.select('#list > div.list.list--default > ul:nth-of-type(2) > li > a')
-        titles = soup.select('#list > div.list.list--default > ul:nth-of-type(2) > li > a > div.list__subject > span.list__title')
-
-        notices = []
-        for i in range(len(titles)):
-            if '완료' in titles[i].text:
-                continue
-
-            url = "http://lostark.game.onstove.com" + links[i]['href']
-
-            response = requests.get(url)
+        try:
+            response = requests.get(config.URL_CONFIG['notice'])
             html = response.text
 
-            inner_soup = BeautifulSoup(html, 'html.parser')
-            inner_title = inner_soup.find(text='[점검 시간]')
-            if inner_title is None:
-                continue
+            soup = BeautifulSoup(html, 'html.parser')
 
-            inner_content = inner_title.parent.parent.findNext('p').contents[0].text
+            links = soup.select('#list > div.list.list--default > ul:nth-of-type(2) > li > a')
+            titles = soup.select('#list > div.list.list--default > ul:nth-of-type(2) > li > a > div.list__subject > span.list__title')
 
-            notices.append([titles[i].text, inner_title + '\n' + inner_content, url])
+            notices = []
+            for i in range(len(titles)):
+                if '완료' in titles[i].text:
+                    continue
 
-        if len(notices) == 0:
-            notices.append('예정된 점검 공지가 없습니다 😍')
-        return notices
+                url = "http://lostark.game.onstove.com" + links[i]['href']
+
+                response = requests.get(url)
+                html = response.text
+
+                inner_soup = BeautifulSoup(html, 'html.parser')
+                inner_title = inner_soup.find(text='[점검 시간]')
+                if inner_title is None:
+                    continue
+
+                inner_content = inner_title.parent.parent.findNext('p').contents[0].text
+
+                notices.append([titles[i].text, inner_title + '\n' + inner_content, url])
+        except:
+            notices = []
+        finally:
+            if len(notices) == 0:
+                notices.append('예정된 점검 공지가 없습니다 😍')
+            return notices
 
 
     def start_queue(self):
