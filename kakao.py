@@ -64,7 +64,10 @@ def get_notice_text():
     text = "🐤️로스트아크 점검 공지\n"
     text += "═══════════\n"
     for notice in notices:
-        text += notice + '\n\n'
+        if type(notice) == str:
+            text += notice + '\n\n'
+        else:
+            text += '\n\n'.join(notice)
         text += '\n\n-----------------------\n'
 
     return text
